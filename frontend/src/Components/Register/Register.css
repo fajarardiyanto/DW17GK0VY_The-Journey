@@ -1,0 +1,32 @@
+.btn6 {
+  position: absolute;
+  width: 340px;
+  left: 30px;
+  background: #ffaf00;
+  border-style: none;
+  color: #fff;
+}
+
+.btn6:hover {
+  background-color: #ffaf00 !important;
+  color: #fff;
+  outline: #fff !important;
+}
+
+.textMuted-7 {
+  margin-left: -200px;
+}
+
+.labels {
+  font-family: "Product Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 15px;
+  color: #000000;
+}
+
+.header-register {
+  left: 28%;
+  margin-bottom: -20px;
+}

@@ -1,0 +1,36 @@
+.foto__profile {
+  border-radius: 55%;
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+.preview-size {
+  width: 250px;
+  height: 285px;
+  position: absolute;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  border-radius: 6px;
+}
+
+.div-preview-size {
+  width: 250px;
+  height: 325px;
+}
+
+.btn__add__profile {
+  position: absolute;
+  width: 140px;
+  margin-top: -30px;
+  color: #fff;
+  border-style: none;
+  background: #ffaf00;
+}
+
+.btn__add__profile:hover {
+  background-color: #ffaf00 !important;
+  color: #fff;
+  outline: #fff !important;
+}

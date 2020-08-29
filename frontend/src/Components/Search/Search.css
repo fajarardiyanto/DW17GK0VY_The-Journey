@@ -1,0 +1,22 @@
+.btn9 {
+  position: absolute;
+  width: 140px;
+  height: 52px;
+  left: 1190px;
+  top: -44px;
+  background: #ffaf00;
+  border-radius: 4px;
+  border-style: none;
+}
+
+.btn9 p {
+  font-size: 20px;
+  text-shadow: none;
+  font-family: "Product Sans", sans-serif;
+  padding-top: 7px;
+  color: #fff;
+}
+
+.btn9:hover {
+  background-color: #ffaf00;
+}

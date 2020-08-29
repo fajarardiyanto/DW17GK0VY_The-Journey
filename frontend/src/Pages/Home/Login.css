@@ -1,0 +1,39 @@
+.btn6 {
+  position: absolute;
+  width: 340px;
+  margin-top: -50px;
+  left: 30px;
+  background: #ffaf00;
+  border-style: none;
+  color: #fff;
+}
+
+.btn6:hover {
+  background-color: #ffaf00 !important;
+  color: #fff;
+  outline: #fff !important;
+}
+
+.textMuted-7 {
+  margin-left: -200px;
+  color: #b1b1b1;
+}
+
+.textMuted-7 p {
+  font-size: 14px;
+  margin-left: -40%;
+  width: 100%;
+}
+
+.labels {
+  font-family: "Product Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  margin-left: 15px;
+  color: #000000;
+}
+
+.header-login {
+  left: 35%;
+}

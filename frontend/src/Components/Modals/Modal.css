@@ -1,0 +1,49 @@
+.headers {
+  position: absolute;
+  margin-top: 51px;
+  font-family: "Product Sans", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 36px;
+  line-height: 44px;
+  color: #000000;
+  border: none !important;
+}
+
+.set-modal {
+  width: 400px;
+  margin-left: 500px;
+}
+
+.modal-md {
+  margin: auto;
+  width: 90%;
+  max-width: 90vw;
+}
+
+.hibiscuss {
+  z-index: 0;
+  width: 100px;
+  margin-left: 308px;
+}
+
+.palms {
+  z-index: 0;
+  width: 150px;
+  margin-top: -98px;
+}
+
+.btnn {
+  background-color: #fff;
+  border-color: #fff;
+  margin-top: -100px;
+}
+
+.btnn:hover {
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.footers {
+  border: none !important;
+}
