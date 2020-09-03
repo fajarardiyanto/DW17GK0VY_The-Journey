@@ -6,7 +6,8 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
 import ReactHtmlParser from "react-html-parser";
-import { Card, Col, Row, Container } from "react-bootstrap";
+import LoadingSpinner from "../Loading/LoadingSpinner";
+import { Card, Col, Row, Container, Nav } from "react-bootstrap";
 
 function BookmarkContent() {
   const [bookmarks, setBookmark] = useState([]);
@@ -15,7 +16,7 @@ function BookmarkContent() {
   const getBookmarkUser = async () => {
     try {
       const res = await axios(
-        `http://localhost:8080/api/v1/bookmark/user/${id}`
+        `http://192.168.1.6:50001/api/v1/bookmark/user/${id}`
       );
 
       const resData = res.data.data;
@@ -27,8 +28,9 @@ function BookmarkContent() {
 
   const removeBookmark = async (e, idBm) => {
     e.preventDefault();
-    await axios.delete(`http://localhost:8080/api/v1/bookmark/${idBm}`);
+    await axios.delete(`http://192.168.1.6:50001/api/v1/bookmark/${idBm}`);
 
+    window.location.reload();
     setBookmark(bookmarks.filter((trip) => trip.id !== id));
   };
 
@@ -38,7 +40,9 @@ function BookmarkContent() {
         <Col>
           <Row>
             {isLoading ? (
-              <h1>Loading...</h1>
+              <h1 style={{ marginTop: "80px", marginLeft: "25px" }}>
+                <LoadingSpinner />
+              </h1>
             ) : (
               <>
                 {bookmarks.map((bookmark) => (

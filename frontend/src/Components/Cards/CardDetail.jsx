@@ -4,8 +4,9 @@ import "./Card.css";
 
 import axios from "axios";
 import { useQuery } from "react-query";
-import ReactHtmlParser from "react-html-parser";
 import { useParams } from "react-router-dom";
+import ReactHtmlParser from "react-html-parser";
+import LoadingSpinner from "../Loading/LoadingSpinner";
 import { Card, Container, Col } from "react-bootstrap";
 
 function CardDetail() {
@@ -18,7 +19,7 @@ function CardDetail() {
   });
 
   const getTrip = async () => {
-    const res = await axios(`http://localhost:8080/api/v1/trip/${param.id}`);
+    const res = await axios(`http://192.168.1.6:50001/api/v1/trip/${param.id}`);
 
     return res;
   };
@@ -29,8 +30,10 @@ function CardDetail() {
   return (
     <div>
       <Container>
-        {isLoading || !trip || !trip?.data.data.title ? (
-          <h1>Loading...</h1>
+        {isLoading ? (
+          <h1>
+            <LoadingSpinner />
+          </h1>
         ) : (
           <>
             <div key={trip.data.data.id}>

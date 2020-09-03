@@ -7,7 +7,7 @@ function Bookmark() {
   return (
     <div>
       <HeaderPage />
-      <h1>Bookmark</h1>
+      <h1 style={{ marginLeft: "-63%" }}>Bookmark</h1>
       <BookmarkContent />
     </div>
   );

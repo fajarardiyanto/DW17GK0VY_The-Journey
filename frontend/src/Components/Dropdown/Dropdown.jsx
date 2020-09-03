@@ -37,7 +37,7 @@ function DropdownUser() {
 
   const getUser = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/api/v1/user/${id}`);
+      const res = await axios.get(`http://192.168.1.6:50001/api/v1/user/${id}`);
 
       return res;
     } catch (err) {}
@@ -59,7 +59,7 @@ function DropdownUser() {
           ) : (
             <>
               <Image
-                src={`http://localhost:8080/Images/${userResult.data.data.image}`}
+                src={`http://192.168.1.6:50001/Images/${userResult.data.data.image}`}
                 alt="foto-profile"
                 className="image__profile_xs"
               />

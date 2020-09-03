@@ -10,7 +10,7 @@ function Home() {
   return (
     <div>
       <HeaderPage />
-      <h1>Journey</h1>
+      <h1 style={{ marginLeft: "-75%" }}>Journey</h1>
       <CardHome />
     </div>
   );

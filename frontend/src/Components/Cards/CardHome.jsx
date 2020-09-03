@@ -8,8 +8,8 @@ import axios from "axios";
 import { useQuery } from "react-query";
 import ReactHtmlParser from "react-html-parser";
 import { Link, useHistory } from "react-router-dom";
-import { Card, Col, Row, Container, Form, Button } from "react-bootstrap";
 import LoadingSpinner from "../Loading/LoadingSpinner";
+import { Card, Col, Row, Container, Form, Button } from "react-bootstrap";
 
 function CardHome(props) {
   const history = useHistory();
@@ -18,6 +18,7 @@ function CardHome(props) {
   const [trips, setTrips] = useState([]);
   const [search, setSearch] = useState("");
   const [filterTrips, setFilterTrips] = useState([]);
+  const [error, setError] = useState("");
 
   const [saveBm, setSaveBm] = useState({
     bmUserId: id,
@@ -32,7 +33,7 @@ function CardHome(props) {
 
   const getAllTrips = async () => {
     try {
-      const res = await axios.get("http://localhost:8080/api/v1/trips");
+      const res = await axios.get("http://192.168.1.6:50001/api/v1/trips");
 
       const resData = res.data.data;
       return setTrips(resData);
@@ -67,7 +68,7 @@ function CardHome(props) {
     try {
       e.preventDefault();
       const res = await axios.post(
-        "http://localhost:8080/api/v1/bookmark",
+        "http://192.168.1.6:50001/api/v1/bookmark",
         saveBm
       );
 
@@ -76,7 +77,9 @@ function CardHome(props) {
       } else {
         console.log(res.data.status);
       }
-    } catch (err) {}
+    } catch (err) {
+      alert(err.response.data.error.message);
+    }
   };
 
   const handleModal = () => {
@@ -157,7 +160,7 @@ function CardHome(props) {
                                   {formatter.format(new Date(trip.createdAt))}
                                 </Card.Subtitle>
                                 <Card.Text className="text__card__body">
-                                  <div className="div__detail">
+                                  <div className="div__detail font__text">
                                     {ReactHtmlParser(
                                       `${trip.description.substring(
                                         0,

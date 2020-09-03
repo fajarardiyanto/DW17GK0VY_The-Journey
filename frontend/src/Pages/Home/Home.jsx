@@ -25,7 +25,10 @@ function Home() {
 
   const handleLogin = async () => {
     try {
-      const res = await axios.post("http://localhost:8080/api/v1/login", forms);
+      const res = await axios.post(
+        "http://192.168.1.6:50001/api/v1/login",
+        forms
+      );
 
       localStorage.setItem("token", res.data.data.token);
       localStorage.setItem("id", res.data.data.id);
@@ -151,7 +154,7 @@ function Home() {
       </Jumbotron>
 
       <div>
-        <h1 className="">Journey</h1>
+        <h1 style={{ marginLeft: "-75%" }}>Journey</h1>
         <CardHome showLogin={setShowLogin} />
       </div>
     </div>

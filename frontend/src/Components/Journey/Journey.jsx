@@ -21,11 +21,15 @@ function AddJourney() {
 
   const handleInputTrip = async () => {
     try {
-      const res = await axios.post("http://localhost:8080/api/v1/trip", forms, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      const res = await axios.post(
+        "http://192.168.1.6:50001/api/v1/trip",
+        forms,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
 
       return res;
     } catch (err) {
@@ -60,7 +64,12 @@ function AddJourney() {
             name="userId"
           />
           <Form.Group>
-            <Form.Label className="float-left">Title</Form.Label>
+            <Form.Label
+              className="float-left"
+              style={{ fontWeight: "bold", fontSize: "24px" }}
+            >
+              Title
+            </Form.Label>
             <Form.Control
               type="text"
               value={forms.title}
@@ -73,17 +82,26 @@ function AddJourney() {
             editor={ClassicEditor}
             value={forms.description}
             onInit={(editor) => {
-              // You can store the "editor" and use when it is needed.
-              console.log("Editor is ready to use!", editor);
+              editor.editing.view.change((writer) => {
+                writer.setStyle(
+                  "height",
+                  "300px",
+                  editor.editing.view.document.getRoot()
+                );
+              });
             }}
             onChange={handleCKEditor}
             config={{
               ckfinder: {
-                uploadUrl: `http://localhost:8080/upload`,
+                uploadUrl: `http://192.168.1.6:50001/upload`,
               },
             }}
           />
-          <Button variant="primary" type="submit">
+          <Button
+            variant="warning"
+            type="submit"
+            style={{ marginTop: "20px", color: "#fff", float: "right" }}
+          >
             Submit
           </Button>
         </Form>

@@ -41,7 +41,7 @@ function ProfileContent() {
 
       fd.append("profilImage", currentImage.profilImage);
 
-      await axios.patch(`http://localhost:8080/api/v1/user/${id}`, fd, {
+      await axios.patch(`http://192.168.1.6:50001/api/v1/user/${id}`, fd, {
         header: {
           "content-type": "multipart/form-data",
           Authorization: `Bearer ${token}`,
@@ -90,7 +90,7 @@ function ProfileContent() {
 
   const getTrips = async () => {
     try {
-      const res = await axios(`http://localhost:8080/api/v1/trips`);
+      const res = await axios(`http://192.168.1.6:50001/api/v1/trips`);
 
       const resData = res.data.data;
       return setTrip(resData);
@@ -101,7 +101,7 @@ function ProfileContent() {
 
   const getUser = async () => {
     try {
-      const res = await axios.get(`http://localhost:8080/api/v1/user/${id}`);
+      const res = await axios.get(`http://192.168.1.6:50001/api/v1/user/${id}`);
 
       return res;
     } catch (err) {}
@@ -120,7 +120,7 @@ function ProfileContent() {
 
   const handleBookmark = async () => {
     try {
-      await axios.post("http://localhost:8080/api/v1/bookmark", saveBm);
+      await axios.post("http://192.168.1.6:50001/api/v1/bookmark", saveBm);
     } catch (err) {}
   };
 
@@ -132,7 +132,7 @@ function ProfileContent() {
       ) : (
         <>
           <Image
-            src={`http://localhost:8080/Images/${userResult.data.data.image}`}
+            src={`http://192.168.1.6:50001/Images/${userResult.data.data.image}`}
             alt="foto-profile"
             className="foto__profile"
             onClick={showModal}

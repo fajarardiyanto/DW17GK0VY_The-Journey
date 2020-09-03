@@ -20,7 +20,7 @@ function Search() {
   const getAllTrips = async () => {
     try {
       const res = await axios(
-        `http://localhost:8080/api/v1/search/${param.title}`
+        `http://192.168.1.6:50001/api/v1/search/${param.title}`
       );
 
       return res;
@@ -74,7 +74,7 @@ function Search() {
                         >
                           <Card.Img
                             variant="top"
-                            src={`http://localhost:8080/Images/${trip.image}`}
+                            src={`http://192.168.1.6:50001/Images/${trip.image}`}
                             className="centers"
                           />
                           <Card.Body>

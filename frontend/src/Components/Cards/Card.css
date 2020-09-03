@@ -1,3 +1,7 @@
+.font__text {
+  font-family: "Avenir", sans-serif;
+}
+
 .card__home {
   margin: 20px;
   margin-top: 100px;
